@@ -132,7 +132,7 @@ def train_func(config: Dict):
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     from torch.optim.lr_scheduler import ReduceLROnPlateau
     
-    scheduler = ReduceLROnPlateau(optimizer, 'min', patience=lrpatience, min_lr=lrmin, verbose=True)
+    scheduler = ReduceLROnPlateau(optimizer, 'min', patience=lrpatience, min_lr=lrmin)#, verbose=True)
     loss_results = []
     
     print(model)

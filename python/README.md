@@ -155,6 +155,13 @@ It is possible to loop this function over all test traces in a folder with the f
 for i in `ls <path-to-test-folder>/*.csv`; do python visual_xapp_inference.py --trace_path $i --slicelen $l --model_path <path-to-model-.pt> --norm_param_path <path-to-norm-param-.pkl> --mode inference_offline --CTRLcheck --model_type <model-type> --dir_postfix <str-appended-to-output-dir>; done
 ```
 
+
+# Dependencies and Installation
+  - Make environment with conda env create -f environment.yml
+
+  - python -m pip install --pre --upgrade --force-reinstall \
+  torch torchvision torchaudio \
+  --index-url https://download.pytorch.org/whl/nightly/cu128
 # TODO: next steps
 - [x] Complete Visual Transformer support.
 - [ ] Add multiple attention heads to V1 and V2
