@@ -1,0 +1,4 @@
+Model trans_v1 with slice 64:
+Mean: 2.2758300408073096, std: 0.04258935280878065, num. epochs: 115
+Model cnn with slice 64:
+Mean: 0.4562305672126904, std: 0.04841411299133704, num. epochs: 114

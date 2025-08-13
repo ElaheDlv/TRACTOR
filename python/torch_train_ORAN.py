@@ -337,10 +337,21 @@ if __name__ == "__main__":
     print("--- DS INFO ---")
     print(ds_info)
 
+    '''
     logdir = os.path.join(args.cp_path, args.exp_name)
 
     if not os.path.isdir(logdir):
         os.makedirs(logdir, exist_ok=True)
+    '''
+    # Figure out where to write logs
+    if args.test is None:
+        # TRAIN MODE: cp_path is a directory root; create <cp_path>/<exp_name>
+        logdir = os.path.join(args.cp_path, args.exp_name)
+        os.makedirs(logdir, exist_ok=True)
+    else:
+        # TEST MODE: cp_path is usually a checkpoint file; put logs next to it
+        # If a directory was passed, keep it; if a file was passed, use its parent
+        logdir = args.cp_path if os.path.isdir(args.cp_path) else os.path.dirname(args.cp_path)
 
     #include_KPI_ixs = [1] + [x for x in range(3, ds_train.obs_input.shape[-1])]    # exclude column 0 (Timestamp) and 2 (IMSI)
     normp = pickle.load(open(os.path.join(args.ds_path, args.norm_param_path), "rb"))

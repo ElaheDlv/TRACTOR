@@ -162,6 +162,18 @@ for i in `ls <path-to-test-folder>/*.csv`; do python visual_xapp_inference.py --
   - python -m pip install --pre --upgrade --force-reinstall \
   torch torchvision torchaudio \
   --index-url https://download.pytorch.org/whl/nightly/cu128
+
+# For test with the val option
+```
+  python torch_train_ORAN.py \
+  --ds_file ../logs/SingleUE/prev_experiments/dataset__emuc__Trial1_Trial2_Trial3_Trial4_Trial5_Trial6__slice${l}__globalnorm.pkl \
+  --isNorm \
+  --ds_path ../logs \
+  --cp_path ./train_log6/ICNC__slice${l}__${FILEMARKER}${SUFFIX}/model.16.trans_v1.pt \
+  --norm_param_path ../logs/global__cols_maxmin__${FILEMARKER}_slice${l}.pkl \
+  --transformer v1 \
+  --test val
+```
 # TODO: next steps
 - [x] Complete Visual Transformer support.
 - [ ] Add multiple attention heads to V1 and V2

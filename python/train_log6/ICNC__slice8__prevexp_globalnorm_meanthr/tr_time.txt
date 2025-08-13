@@ -1,2 +1,0 @@
-Model trans_v1 with slice 8:
-Mean: 0.6778971451979418, std: 0.062225439377152955, num. epochs: 65
