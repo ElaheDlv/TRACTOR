@@ -1,0 +1,4 @@
+Model trans_v1 with slice 16:
+Mean: 0.7110718448956808, std: 0.055947076290854866, num. epochs: 60
+Model trans_v1 with slice 16:
+Mean: 0.719125189781189, std: 0.05560069668168272, num. epochs: 50
